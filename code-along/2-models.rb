@@ -8,6 +8,7 @@
 Company.destroy_all
 # **************************
 
+
 # - Insert, read, update, and delete rows in companies table
 #   (i.e. full CRUD of company data).
 
@@ -15,6 +16,24 @@ Company.destroy_all
 # 1b. check out the model file
 
 # 2. insert new rows in companies table
+new_company = Company.new
+new_company["name"] = "Apple"
+new_company["city"] = "Cupertino"
+new_company["state"] = "CA"
+new_company["url"] = "apple.com"
+new_company.save
+puts "Apple created!"
+
+puts "There are #{Company.all.count} companies in the table."
+
+new_company_2 = Company.new
+new_company_2["name"] = "Amazon"
+new_company_2["city"] = "Seattle"
+new_company["state"] = "WA"
+new_company_2.save
+puts "Amazon created!"
+
+puts "There are #{Company.all.count} companies in the table."
 
 # 3. query companies table to find all row with California company
 
