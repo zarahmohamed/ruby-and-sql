@@ -36,6 +36,15 @@ puts "Amazon created!"
 puts "There are #{Company.all.count} companies in the table."
 
 # 3. query companies table to find all row with California company
+ca_companies = Company.where({ "state" => "CA" })
+puts ca_companies.inspect
+
+#Functional equivalent of SELECT * FROM companies WHERE state = 'CA';
+# apple = Company.findby({ "name" => "Apple", "state" => "CA })
+apple = Company.find_by({"name" => "Apple" })
+apple["name"] = "Apple Computer, Inc"
+apple.save
+puts apple.inspect
 
 # 4. query companies table to find single row for Apple
 
