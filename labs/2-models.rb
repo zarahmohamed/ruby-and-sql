@@ -20,16 +20,30 @@ Salesperson.destroy_all
 # 1b. check out the model file
 
 # 2. insert 1-2 rows in salespeople table.
+new_salesperson = Salesperson.new
+new_salesperson["first_name"] = "Zarah"
+new_salesperson["last_name"] = "Mohamed"
+new_salesperson["email"] = "zarah@test.com"
+new_salesperson.save
+
 
 # 3. write code to display how many salespeople rows are in the database
+puts "There are #{Salesperson.all.count} salespeople"
 
 # ---------------------------------
 # Salespeople: 2
 
 # 4. modify/update column data for a row in the salespeople table.
+# Change zarah@test.com's first name to ZarahLina
+Zarah = Salesperson.find_by({ "email" => "zarah@test.com" })
+Zarah["first_name"] = ZarahLina
+Zarah.save
 
 # CHALLENGE:
 # 5. write code to display each salesperson's full name
+
+for salesperson in salespeople 
+    puts "#{salesperson["first_name"]} #{salesperson["last_name"]}"
 
 # ---------------------------------
 # Salespeople: 2
